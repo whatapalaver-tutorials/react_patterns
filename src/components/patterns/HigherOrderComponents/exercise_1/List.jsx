@@ -1,5 +1,5 @@
 import React from "react";
-// import withData from './withData'
+import withData from './withData'
 
 const List = ({ data = [], error, loading }) => {
   if (error) {
@@ -32,4 +32,4 @@ const List = ({ data = [], error, loading }) => {
   }
 };
 
-export default List;
+export default withData(List);

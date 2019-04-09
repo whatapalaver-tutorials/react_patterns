@@ -5,7 +5,7 @@ import React from "react";
     1- receives a COMPONENT as a parameter (hint: is this function receving a component?)
     2- and returns another component
 */
-const withData = () => {
+const withData = (InnerComponent) => {
   class OuterComponent extends React.Component {
     state = {
       data: undefined,
@@ -28,6 +28,7 @@ const withData = () => {
 
     render() {
       // you should return something here
+      return <InnerComponent {...this.props} data={this.state.data} error={this.state.error} loading={this.state.loading}/>
     }
   }
 
